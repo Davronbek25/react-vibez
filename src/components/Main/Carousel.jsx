@@ -30,9 +30,10 @@ function Carousel({ songs }) {
       <div className="carousel-container d-sm-none d-lg-block">
         <Swiper
           effect={"coverflow"}
+          initialSlide={3}
           grabCursor={true}
           centeredSlides={true}
-          loop={true}
+          loop={false}
           slidesPerView={"auto"}
           spaceBetween={100}
           coverflowEffect={{
@@ -45,10 +46,10 @@ function Carousel({ songs }) {
           className="swiper_container"
         >
           {carouselSongs.map((s, i) => (
-            <SwiperSlide key={i} className={i === 4? 'swiper-slide-active': ''}>
+            <SwiperSlide key={i} className=''>
               <img
                 src={s.album.cover_big}
-                className="carousel_image"
+                className="carousel_image glowing-border"
                 onClick={() => songIdHandler(s.id)}
                 alt={"slide_image" + i}
               />
